@@ -1,4 +1,4 @@
-package analysis3;
+package analysis5;
 
 import java.io.IOException;
 
@@ -14,12 +14,12 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 
-public class Q3 {
+public class Q5 {
 	public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException{
 		Configuration conf = new Configuration();
 		  conf.set("mapreduce.output.textoutputformat.separator", ",");
 		  Job job = Job.getInstance(conf, "Q3");
-		  job.setJarByClass(Q3.class);
+		  job.setJarByClass(Q5.class);
 		  job.setMapperClass(MapClass.class);
 		  job.setReducerClass(ReduceClass.class);
 		  //job.setReducerClass(ReduceClass.class);

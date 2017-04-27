@@ -6,7 +6,7 @@ import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.Mapper;
 
 
-class MapClass extends Mapper<LongWritable,Text,Text,IntWritable>{
+public class MapClass extends Mapper<LongWritable,Text,Text,IntWritable>{
 	public void map(LongWritable key,Text value,Context context) throws IOException, InterruptedException{
 		String[] parts = value.toString().split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
 		String year = parts[7];

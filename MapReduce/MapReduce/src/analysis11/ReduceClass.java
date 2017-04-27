@@ -1,4 +1,4 @@
-package analysis10;
+package analysis11;
 
 import java.io.IOException;
 import java.util.TreeMap;
@@ -31,5 +31,5 @@ public class ReduceClass extends Reducer <Text,Text,NullWritable,Text>{
 		for(String val : top10.descendingMap().values()){
 			context.write(NullWritable.get(),new Text(val));
 		}
-	}//
+	}
 }
