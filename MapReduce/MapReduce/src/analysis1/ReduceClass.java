@@ -8,7 +8,8 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 public class ReduceClass extends Reducer<Text,IntWritable,Text,Text>{
 	int yearbefore = 0;
-	String output = "N.A";
+	String growth = "N.A";
+	String output = " ";
 	public void reduce(Text key,Iterable<IntWritable> value,Context context) throws IOException, InterruptedException{
 		int count = 0;
 		double growthper= 0; 
@@ -17,8 +18,9 @@ public class ReduceClass extends Reducer<Text,IntWritable,Text,Text>{
 		}
 		if(yearbefore!=0){
 			growthper = ((double)(count-yearbefore)/yearbefore)*100;
-			output = String.format("%d", count)+","+String.format("%.2f %%",growthper);
+			String.format("%.2f %%",growthper)
 		}
+		output = String.format("%d", count)+","+growth;
 		yearbefore = count;
 		
 		context.write(key,new Text(output));
