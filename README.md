@@ -53,9 +53,9 @@ Dataset column description.
 10) Find the average Prevailing Wage for each Job for each Year (take part time and full time separate).Arrange the output in descending order.
 11) Which are  employers along with the number of petitions who have the success rate more than 70% in petitions and total petitions filed more than 1000?
 12) Which are the  job positions along with the number of petitions which have the success rate more than 70% in petitions and total petitions filed more than 1000?
-    - Export result for question no 10 to MySql database.  
+    - Export result for question no. 12 to MySql database.  
 ~~~
 
-analysis were performed using [MapReduce](MapReduce),[Hive](Hive),[Pig](Pig).
+##### Analysis were performed using [MapReduce](MapReduce),[Hive](Hive),[Pig](Pig).
 
 
