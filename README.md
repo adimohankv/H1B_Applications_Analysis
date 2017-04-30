@@ -5,7 +5,7 @@ For a foreign national to apply for H1B visa, an US employer must offer a job an
 department.This is the most common visa status applied for and held by international students once they complete college/ higher education
 (Masters, Ph.D.) and work in a full-time position.
 
-The goal of the project is get insights into <b>H-1B</b> applications over the year 2011 to 2016 by performing analysis using different technologies like <b>MapReduce</b>,<b>Hive</b>,<b>Pig</b>.
+The goal of the project is get insights into <b>H-1B</b> applications over the year 2011 to 2016 by performing analysis using different technologies like `MapReduce`,`Hive`,`Pig`.
 
 #### Sample Data
 
@@ -37,5 +37,25 @@ Dataset column description.
 7. <b>WORKSITE:</b> City and State information of the foreign worker’s intended area of employment.
 8. <b>lon:</b> longitude of the Worksite.
 9. <b>lat:</b> latitude of the Worksite.
+
+
+#### Questions that were answered after performing analysis.
+~~~
+1) Is the number of petitions with Data Engineer job title increasing over time?
+2) Find top 5 job titles who are having highest growth in applications.
+3) Which part of the US has the most Data Engineer jobs for each year?
+4) Find top 5 locations in the US who have got certified visa for each year.
+5) Which industry has the most number of Data Scientist positions?
+6) Which top 5 employers file the most petitions each year?
+7) Find the most popular top 10 job positions for H1B visa applications for each year?
+8) Find the percentage and the count of each case status on total applications for each year. Create a graph depicting the pattern of all the cases over the period of time.
+9) Create a bar graph to depict the number of applications for each year
+10) Find the average Prevailing Wage for each Job for each Year (take part time and full time separate).Arrange the output in descending order.
+11) Which are  employers along with the number of petitions who have the success rate more than 70% in petitions and total petitions filed more than 1000?
+12) Which are the  job positions along with the number of petitions which have the success rate more than 70% in petitions and total petitions filed more than 1000?
+    - Export result for question no 10 to MySql database.  
+~~~
+
+analysis were performed using [MapReduce](MapReduce),[Hive](Hive),[Pig](Pig).
 
 
