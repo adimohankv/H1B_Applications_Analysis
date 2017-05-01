@@ -1,4 +1,4 @@
-package analysis1;
+//package analysis1;
 
 import java.io.IOException;
 
@@ -18,7 +18,7 @@ public class ReduceClass extends Reducer<Text,IntWritable,Text,Text>{
 		}
 		if(yearbefore!=0){
 			growthper = ((double)(count-yearbefore)/yearbefore)*100;
-			String.format("%.2f %%",growthper)
+			String.format("%.2f %%",growthper);
 		}
 		output = String.format("%d", count)+","+growth;
 		yearbefore = count;

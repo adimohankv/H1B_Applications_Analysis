@@ -1,6 +1,6 @@
-REGISTER /home/hduser/Downloads/Project/H1B/piggybank.jar;
+REGISTER /home/hduser/Downloads/Project/H1B/Pig/piggybank.jar;
 DEFINE CSVExcelStorage org.apache.pig.piggybank.storage.CSVExcelStorage();
-h1b = load '/home/hduser/Downloads/Project/H1B/h1b.csv' using CSVExcelStorage(',') as (s_no:int,case_status:chararray, employer_name:chararray, soc_name:chararray, job_title:chararray, full_time_position:chararray,prevailing_wage:int,year:chararray, worksite:chararray, longitute:double, latitute:double); 
+h1b = load '/project/h1b/h1b.csv' using CSVExcelStorage(',') as (s_no:int,case_status:chararray, employer_name:chararray, soc_name:chararray, job_title:chararray, full_time_position:chararray,prevailing_wage:int,year:chararray, worksite:chararray, longitute:double, latitute:double); 
 
 h1b1 = filter h1b by $1 != 'CASE_STATUS';
 h1b2 = filter h1b1 by $4 == 'DATA ENGINEER';
@@ -43,4 +43,6 @@ h1b_limit5 = limit h1b_order5 1;
 h1b_limit6 = limit h1b_order6 1;
 
 h1b_union = UNION h1b_limit1,h1b_limit2,h1b_limit3,h1b_limit4,h1b_limit5,h1b_limit6;
+
+store h1b_union into '/project/h1b/analysis3' using PigStorage(','); 
 

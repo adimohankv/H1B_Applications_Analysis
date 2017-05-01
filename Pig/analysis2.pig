@@ -1,6 +1,6 @@
-REGISTER /home/hduser/Downloads/Project/H1B/piggybank.jar;
+REGISTER /home/hduser/Downloads/Project/H1B/Pig/piggybank.jar;
 DEFINE CSVExcelStorage org.apache.pig.piggybank.storage.CSVExcelStorage();
-h1b = load '/home/hduser/Downloads/Project/H1B/h1b.csv' using CSVExcelStorage(',') as (s_no:int,case_status:chararray, employer_name:chararray, soc_name:chararray, job_title:chararray, full_time_position:chararray,prevailing_wage:int,year:chararray, worksite:chararray, longitute:double, latitute:double); 
+h1b = load '/project/h1b/h1b.csv' using CSVExcelStorage(',') as (s_no:int,case_status:chararray, employer_name:chararray, soc_name:chararray, job_title:chararray, full_time_position:chararray,prevailing_wage:int,year:chararray, worksite:chararray, longitute:double, latitute:double); 
 
 h1b1 = filter h1b by $1 != 'CASE_STATUS'; 
 h1b_required = foreach h1b1 generate $4,$7;
@@ -32,4 +32,6 @@ h1b_count = foreach h1b_join generate $1,ROUND_TO((((float)($2-$0))*100/$0),2),R
 h1b_avg = foreach h1b_count generate $0,($1+$2+$3+$4+$5)/5; 
 h1b_order = order h1b_avg by $1 desc;
 h1b_top5 = limit h1b_order 5;
-dump h1b_top5; 
+
+
+store h1b_top5 into '/project/h1b/analysis2' using PigStorage(','); 

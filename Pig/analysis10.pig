@@ -30,20 +30,6 @@ h1b_count4 =  foreach h1b_group4 generate ROUND_TO(AVG(h1b_2014.$2),2),group;
 h1b_count5 =  foreach h1b_group5 generate ROUND_TO(AVG(h1b_2015.$2),2),group;
 h1b_count6 =  foreach h1b_group6 generate ROUND_TO(AVG(h1b_2016.$2),2),group;
 
-/*h1b_order1 = order h1b_count1 by $0 desc;
-h1b_order2 = order h1b_count2 by $0 desc;
-h1b_order3 = order h1b_count3 by $0 desc;
-h1b_order4 = order h1b_count4 by $0 desc;
-h1b_order5 = order h1b_count5 by $0 desc;
-h1b_order6 = order h1b_count6 by $0 desc;  
-
-h1b_limit1 = limit h1b_order1 5;
-h1b_limit2 = limit h1b_order2 5;
-h1b_limit3 = limit h1b_order3 5;
-h1b_limit4 = limit h1b_order4 5;
-h1b_limit5 = limit h1b_order5 5;
-h1b_limit6 = count h1b_order6 5;
-*/
 h1b_union_y = UNION h1b_count1,h1b_count2,h1b_count3,h1b_count4,h1b_count5,h1b_count6;
 h1b_order_y = order h1b_union_y by $0 desc;
 
@@ -81,5 +67,6 @@ h1b_order_n = order h1b_union_n by $0 desc;
 
 h1b_union = union h1b_union_y,h1b_union_n;
 
-dump h1b_union;
+store h1b_union into '/project/h1b/analysis10' using PigStorage(','); 
+
 
