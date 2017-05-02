@@ -1,4 +1,4 @@
-REGISTER /home/hduser/Downloads/Project/H1B/piggybank.jar;
+REGISTER piggybank.jar;
 DEFINE CSVExcelStorage org.apache.pig.piggybank.storage.CSVExcelStorage();
 h1b = load '/project/h1b/h1b.csv' using CSVExcelStorage(',') as (s_no:int,case_status:chararray, employer_name:chararray, soc_name:chararray, job_title:chararray, full_time_position:chararray,prevailing_wage:int,year:chararray, worksite:chararray, longitute:double, latitute:double); 
 
