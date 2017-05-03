@@ -56,18 +56,21 @@ do
 		;;
 		2) clear;
 			option_picked "2 Find top 5 job titles who are having highest growth in applications. ";
+			hadoop fs -rm -r /project/h1b/analysis2
 			pig Pig/analysis2.pig
 			hadoop fs -cat /project/h1b/analysis2/*
 			show_menu;
 		;;  
 		3) clear;
 			option_picked "3 Which part of the US has the most Data Engineer jobs for each year?";      
+			hadoop fs -rm -r /project/h1b/analysis3
 			pig Pig/analysis3.pig
 			hadoop fs -cat /project/h1b/analysis3/*
 			show_menu;
 		;;
 		4) clear;
 			option_picked "4 find top 5 locations in the US who have got certified visa for each year.";
+			hadoop fs -rm -r /project/h1b/analysis4
 			pig Pig/analysis4.pig
 			hadoop fs -cat /project/h1b/analysis4/*
 			show_menu;
@@ -120,6 +123,7 @@ do
 		;;
 		10) clear;
 			option_picked "10) Find the average Prevailing Wage for each Job for each Year (take part time and full time separate) arrange output in descending order";
+			hadoop fs -rm -r /project/h1b/analysis10
 			Pig/analysis10.pig
 			hadoop fs -cat /project/h1b/analysis10/* | less
 			show_menu;
