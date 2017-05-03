@@ -1,10 +1,8 @@
 //package analysis1;
 
 import java.io.IOException;
-
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapreduce.Reducer;
-//import org.apache.hadoop.mapreduce.Reducer.Context;
 
 public class ReduceClass extends Reducer<Text,IntWritable,Text,Text>{
 	int yearbefore = 0;
