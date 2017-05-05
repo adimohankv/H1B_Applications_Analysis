@@ -51,7 +51,7 @@ do
         case $opt in
 		1) clear;
 			option_picked "1 Is the number of petitions with Data Engineer job title increasing over time?";
-			(cd MapReduce/src/analysis1/analysis1.sh)
+			(cd MapReduce/src/analysis1 ; analysis1.sh)
 			show_menu;
 		;;
 		2) clear;
@@ -77,7 +77,7 @@ do
 		;;  
 		5) clear;
 			option_picked "5) Which industry has the most number of Data Scientist positions?";
-			(cd MapReduce/src/analysis5.sh)
+			(cd MapReduce/src/analysis5 ; analysis5.sh)
 			show_menu;
 		;;
 		6) clear;
@@ -130,12 +130,12 @@ do
 		;;
 		11) clear;
 			option_picked "11) Which are   employers who have the highest success rate in petitions more than 70% in petitions and total petions filed more than 1000?"
-			(cd MapReduce/src/analysis11/analysis11.sh)
+			(cd MapReduce/src/analysis11 ; analysis11.sh)
 			show_menu;
 		;;
 		12) clear;
 			option_picked "12) Which are the top 10 job positions which have the  success rate more than 70% in petitions and total petitions filed more than 1000?"
-			(cd MapReduce/src/analysis12/analysis12.sh)
+			(cd MapReduce/src/analysis12 ; analysis12.sh)
 			show_menu;
 		;;
 		13) clear;
